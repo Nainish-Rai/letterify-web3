@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { ThirdwebProvider } from "thirdweb/react";
+import { NextUIProvider } from "@nextui-org/react";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
@@ -18,7 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en" className="dark">
       <body className={inter.className}>
-        <ThirdwebProvider>{children}</ThirdwebProvider>
+        <ThirdwebProvider>
+          {" "}
+          <NextUIProvider>{children} </NextUIProvider>
+        </ThirdwebProvider>
       </body>
     </html>
   );
