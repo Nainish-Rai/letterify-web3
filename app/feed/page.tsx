@@ -12,7 +12,7 @@ import TOGCard from "@/components/TOGCard";
 import { client } from "../client";
 import CreateTOGBtn from "@/components/CreateTOGBtn";
 import { useEffect, useState } from "react";
-import toast from "react-hot-toast";
+import toast, { Toaster } from "react-hot-toast";
 type Props = {};
 
 function Feed({}: Props) {
@@ -64,6 +64,8 @@ function Feed({}: Props) {
     );
   return (
     <div className="w-full">
+      <Toaster />
+
       <div className="flex w-full items-center justify-between gap-12 px-4 py-2">
         <CreateTOGBtn />
         <div>
@@ -94,13 +96,14 @@ function Feed({}: Props) {
                     prepareContractCall({
                       contract,
                       method: resolveMethod("approveApplication"),
-                      params: [item.index, item.applicant],
+                      params: [item.index, item.data],
                     })
                   }
                   onTransactionSent={() => toast.success("Transaction Sent")}
-                  onTransactionConfirmed={() =>
-                    toast.success("Transaction Confirmed")
-                  }
+                  onTransactionConfirmed={() => (
+                    toast.success("Transaction Confirmed"),
+                    applicationArr.splice(i, 1)
+                  )}
                 >
                   Approve
                 </TransactionButton>

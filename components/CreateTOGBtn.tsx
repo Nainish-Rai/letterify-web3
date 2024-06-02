@@ -2,7 +2,7 @@
 import { prepareContractCall, resolveMethod } from "thirdweb";
 import { TransactionButton, useSendTransaction } from "thirdweb/react";
 import { contract } from "@/utils/contracts";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 import {
   Modal,
@@ -40,7 +40,6 @@ export default function CreateTOGBtn() {
 
   return (
     <>
-      <Toaster />
       <Button onPress={onOpen} color="primary">
         Create A New TOG
       </Button>

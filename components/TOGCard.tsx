@@ -5,7 +5,7 @@ import { prepareContractCall, resolveMethod } from "thirdweb";
 import { TransactionButton, useSendTransaction } from "thirdweb/react";
 import { contract } from "@/utils/contracts";
 import WriteLetterBtn from "./WriteLetterBtn";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 import { useRouter } from "next/navigation";
 
 export default function TOGCard({
@@ -27,7 +27,6 @@ export default function TOGCard({
   const router = useRouter();
   return (
     <div className="h-[300px] my-2 col-span-12 w-full p-4 sm:col-span-3">
-      {/* <Toaster /> */}
       <Card
         isFooterBlurred
         className="w-full h-[300px] col-span-12 sm:col-span-3"

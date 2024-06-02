@@ -3,7 +3,7 @@ import { prepareContractCall, resolveMethod } from "thirdweb";
 import { TransactionButton, useSendTransaction } from "thirdweb/react";
 import { contract } from "@/utils/contracts";
 import { Textarea } from "@nextui-org/input";
-import toast, { Toaster } from "react-hot-toast";
+import toast from "react-hot-toast";
 
 import {
   Modal,
@@ -30,7 +30,6 @@ export default function WriteLetterBtn({ togIndex }: { togIndex: number }) {
 
   return (
     <>
-      <Toaster />
       <Button onPress={onOpen} color="primary">
         Write
       </Button>

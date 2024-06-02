@@ -2,6 +2,7 @@
 import { ConnectButton, ConnectEmbed, useActiveAccount } from "thirdweb/react";
 import { client } from "./client";
 import { useRouter } from "next/navigation";
+import { Toaster } from "react-hot-toast";
 
 export default function Home() {
   const account = useActiveAccount();
